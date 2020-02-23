@@ -2,70 +2,65 @@
 <v-container>
     <v-container v-if="img">
         <v-layout row>
-        <v-img height="398" :src="img"></v-img>
+        <expandable-image height="338" :src="img"></expandable-image>
         </v-layout>
     </v-container>
     
     <v-container v-if="img0">
         <v-layout row>
-        <v-img :src="img0"></v-img>
+        <expandable-image height="338" :src="img0"></expandable-image>
         </v-layout>
     </v-container>
     
     <v-container v-if="img1">
         <v-layout row>
-        <v-img :src="img1"></v-img>
+        <expandable-image height="338" :src="img1"></expandable-image>
         </v-layout>
     </v-container>
 
-    <v-layout row>
-        <v-flex xs12>
+    <v-container>
             <v-card>
-                <v-flex xs12 >
-    <v-layout row>
-        <v-flex xs12 class="text-center">
-            <v-layout row>
-                {{ item.item }}
-            </v-layout>
-            <v-layout row>
-                {{ item.price }}
-            </v-layout> 
-            <v-layout>
-                {{item.description}}
-            </v-layout>
-            <v-layout row>
-                                <v-col class="d-flex" cols="12" sm="6">
+                <v-card-title>
+                    <h1 class="blue--text">{{item.item}}</h1>
+                    </v-card-title>
+                    <v-card-text>
+                        <div class="rows">
+                        <v-layout row class="mb-3">
+                            {{item.price}}
+                        </v-layout>
+                        
+                        <v-layout row class="mb-3">
+                            {{item.description}}
+                        </v-layout>
+                        
+                        <v-layout row class="mb-3">
                                     <v-select
                                     :items="numbers"
                                     label="Number of items"
                                     solo
                                     v-model="number"
                                     ></v-select>
-                                </v-col>
-                            
-            </v-layout>
-           
-
-            <v-layout row>
-                Delivery address
-                         <v-textarea
-                          v-model="deliver"
+                        </v-layout>
+                        
+                        <v-layout row class="mb-3">
+                            <v-textarea
+                          v-model="description"
                           color="teal"
                          >
                        <template v-slot:label>
                          <div>
-                          deliver address 
+                          address <small>(delivery)</small>
                          </div>
                        </template>
                         </v-textarea>
-            </v-layout>
-
-        </v-flex>
-    </v-layout>
-                </v-flex>
+                        </v-layout>
+                        </div>
+                    </v-card-text>
+                    <v-card-actions>
+                        <v-btn color="green">buy</v-btn>
+                    </v-card-actions>
             </v-card>
-        </v-flex>
-    </v-layout>
+    </v-container>
 </v-container>
 </template>
 
@@ -118,3 +113,9 @@ export default {
 
 
 
+<style scoped>
+.rows {
+    font-size: 19px;
+    font-weight: bold
+}
+</style>
