@@ -93,6 +93,7 @@
 
                          
                        <!-- img0 -->
+    <v-container v-if="imgurl">
                         <v-layout row>
                             <v-flex xs12 sm6>
                                 <v-btn @click="onPickFile">Set photo</v-btn>
@@ -102,7 +103,8 @@
                                 accept="image/*"
                                 @change="onFilePicked0">
                             </v-flex>
-                        </v-layout>   
+                        </v-layout>
+    </v-container>   
 
                         
                         <v-container v-if="imgurl0">
@@ -114,7 +116,7 @@
                         </v-container>
 
                         <!-- img1 -->
-
+                        <v-container v-if="imgurl0">
                         <v-layout row>
                             <v-flex xs12 sm6>
                                 <v-btn @click="onPickFile">Set photo</v-btn>
@@ -124,7 +126,8 @@
                                 accept="image/*"
                                 @change="onFilePicked1">
                             </v-flex>
-                        </v-layout>   
+                        </v-layout>
+                        </v-container>   
 
                         
                         <v-container v-if="imgurl1">
@@ -333,7 +336,7 @@ export default {
                 console.log(this.city);
                 console.log(this.fullamount);
  */
-                this.$store.dispatch('createnewstock', {item:this.item, quantity:this.number, price:this.price, description:this.description, img:this.imgurl})
+                this.$store.dispatch('createnewstock', {item:this.item, quantity:this.number, price:this.price, description:this.description, img:this.imgurl, img0:this.imgurl0, img1:this.imgurl1})
                 this.$router.push('/itemview')
             },
 
@@ -397,7 +400,7 @@ export default {
             this.imgfile0 = files[0]
     },
 
-    onFilePicked (event) {
+    onFilePicked1 (event) {
         const files = event.target.files
             let imgname = files[0].name
             if (imgname.lastIndexOf('.') <= 0) {
