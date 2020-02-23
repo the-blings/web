@@ -111,15 +111,15 @@
                                 {{item.quantity}} left
                             </v-layout>
 
-                            <v-layout row>
-                                <v-btn rounded>VIEW</v-btn>
-                            </v-layout>
+                            
+                       <v-btn rounded :to="'/itemview/' + item.id">  
+                                View
+                                </v-btn>
                         </v-flex>
                         </div>
                     </v-layout>
                 </v-flex>
     </v-layout>
-
 
     </v-container>
 </div>

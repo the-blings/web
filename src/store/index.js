@@ -112,6 +112,14 @@ export default new Vuex.Store({
 
     stocks (state) {
       return state.stocks
+    },
+
+    stocksfind (state) {
+      return (stockid) => {
+        return state.stocks.find((stock) => {
+          return stock.id == stockid
+        })
+      }
     }
   }
 })

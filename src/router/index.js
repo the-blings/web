@@ -40,6 +40,14 @@ const routes = [
   name: 'itemview',
   component: () => import('../components/ItemView.vue')
 },
+
+{
+  path: '/itemview/:id',
+  name: 'itemviewid',
+  props: true,
+  component: () => import('../components/SingleItem.vue')
+
+},
 ]
 
 const router = new VueRouter({
