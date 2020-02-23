@@ -57,7 +57,9 @@ export default new Vuex.Store({
         quantity: pay.quantity,
         price: pay.price,
         description: pay.description,
-        img: pay.img
+        img: pay.img,
+        img0: pay.img0,
+        img1: pay.img1
       }
 
       firebase.database().ref('stock').push(item)
@@ -85,6 +87,8 @@ export default new Vuex.Store({
                   item: obj[key].item,
                   price: obj[key].price,
                   img: obj[key].img,
+                  img0: obj[key].img0,
+                  img1: obj[key].img1,
                   quantity: obj[key].quantity,
                   description: obj[key].description,
               })
