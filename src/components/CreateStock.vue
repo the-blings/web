@@ -313,8 +313,13 @@ export default {
           hasImage: false,
       img: null,
       imgstringfinl: null,
+      
+      imgfile: '',
+
       imgurl: '',
-      imgfile: ''
+      imgurl0: '',
+      imgurl1: '',
+
     }),
 
         
@@ -354,6 +359,16 @@ export default {
         this.$refs.inputFile.click()
     },
 
+    onPickFile0() {
+        this.$refs.inputFile.click()
+    },
+    
+    onPickFile1() {
+        this.$refs.inputFile.click()
+    },
+
+
+
     onFilePicked (event) {
         const files = event.target.files
             let imgname = files[0].name
@@ -366,6 +381,34 @@ export default {
             })
             fileReader.readAsDataURL(files[0])
             this.imgfile = files[0]
+    },
+
+    onFilePicked0 (event) {
+        const files = event.target.files
+            let imgname = files[0].name
+            if (imgname.lastIndexOf('.') <= 0) {
+                return alert('No file')
+            }
+            const fileReader = new FileReader()
+            fileReader.addEventListener('load', () => {
+                this.imgurl0 = fileReader.result
+            })
+            fileReader.readAsDataURL(files[0])
+            this.imgfile0 = files[0]
+    },
+
+    onFilePicked (event) {
+        const files = event.target.files
+            let imgname = files[0].name
+            if (imgname.lastIndexOf('.') <= 0) {
+                return alert('No file')
+            }
+            const fileReader = new FileReader()
+            fileReader.addEventListener('load', () => {
+                this.imgurl1 = fileReader.result
+            })
+            fileReader.readAsDataURL(files[0])
+            this.imgfile1 = files[0]
     }
 
 
