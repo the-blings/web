@@ -66,9 +66,13 @@
                             </v-flex>
                         </v-layout>
   -->
-                        <v-layout row>
+
+
+                        <!--   // main img
+                         -->
+                         <v-layout row>
                             <v-flex xs12 sm6>
-                                <v-btn @click="onPickFile">Set photo</v-btn>
+                                <v-btn @click="onPickFile">Set main photo</v-btn>
                                 <input type="file" 
                                 style="display: none" 
                                 ref="inputFile" 
@@ -79,12 +83,58 @@
 
                         <v-container v-if="imgurl">
 
+                        
                         <v-layout row>
                             <v-flex xs12 sm6>
                                 <v-img :src="imgurl"></v-img>
                             </v-flex>
                         </v-layout>
                         </v-container>
+
+                         
+                       <!-- img0 -->
+                        <v-layout row>
+                            <v-flex xs12 sm6>
+                                <v-btn @click="onPickFile">Set photo</v-btn>
+                                <input type="file" 
+                                style="display: none" 
+                                ref="inputFile0" 
+                                accept="image/*"
+                                @change="onFilePicked0">
+                            </v-flex>
+                        </v-layout>   
+
+                        
+                        <v-container v-if="imgurl0">
+                            <v-layout row>
+                            <v-flex xs12 sm6>
+                                <v-img :src="imgurl0"></v-img>
+                            </v-flex>
+                        </v-layout>
+                        </v-container>
+
+                        <!-- img1 -->
+
+                        <v-layout row>
+                            <v-flex xs12 sm6>
+                                <v-btn @click="onPickFile">Set photo</v-btn>
+                                <input type="file" 
+                                style="display: none" 
+                                ref="inputFile1" 
+                                accept="image/*"
+                                @change="onFilePicked1">
+                            </v-flex>
+                        </v-layout>   
+
+                        
+                        <v-container v-if="imgurl1">
+                            <v-layout row>
+                            <v-flex xs12 sm6>
+                                <v-img :src="imgurl1"></v-img>
+                            </v-flex>
+                        </v-layout>
+                        </v-container>
+
 
                         <v-layout row>
                             <v-flex xs12 offeset-sm3>
