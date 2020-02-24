@@ -49,6 +49,10 @@
                                     v-model="purpose"
                                     ></v-select>
                         </v-layout>
+
+                        <v-layout row class="mb-3 ml-1 mr-1 price">
+                          amount : {{this.price * this.number}}
+                        </v-layout>
                         <v-btn @click="checkout" color="#ebce59" class="mb-1">
 <!-- 
                         <v-btn rounded :to="'/itemview/' + item.id + '/'">  
@@ -96,6 +100,8 @@ export default {
         console.log(this.wholeResponse[0])
         this.item = this.wholeResponse[0].item
         this.id = this.wholeResponse[0].id
+        this.price = this.wholeResponse[0].price
+   
     },
 
     methods : {
@@ -105,3 +111,12 @@ export default {
     }
 }
 </script>
+
+
+<style scoped>
+.price {
+    font-size: 19px;
+    font-weight: bold;
+    
+}
+</style>
