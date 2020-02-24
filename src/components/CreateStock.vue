@@ -96,7 +96,7 @@
     <v-container v-if="imgurl">
                         <v-layout row>
                             <v-flex xs12 sm6>
-                                <v-btn @click="onPickFile">Set photo</v-btn>
+                                <v-btn @click="onPickFile0">Set photo</v-btn>
                                 <input type="file" 
                                 style="display: none" 
                                 ref="inputFile0" 
@@ -119,7 +119,7 @@
                         <v-container v-if="imgurl0">
                         <v-layout row>
                             <v-flex xs12 sm6>
-                                <v-btn @click="onPickFile">Set photo</v-btn>
+                                <v-btn @click="onPickFile1">Set photo</v-btn>
                                 <input type="file" 
                                 style="display: none" 
                                 ref="inputFile1" 
@@ -137,6 +137,7 @@
                             </v-flex>
                         </v-layout>
                         </v-container>
+
 
 
                         <v-layout row>
@@ -363,11 +364,11 @@ export default {
     },
 
     onPickFile0() {
-        this.$refs.inputFile.click()
+        this.$refs.inputFile0.click()
     },
     
     onPickFile1() {
-        this.$refs.inputFile.click()
+        this.$refs.inputFile1.click()
     },
 
 
@@ -431,7 +432,7 @@ export default {
 }
 
 .main {
-    min-height: 1296px
+    min-height: 1696px
 }
 
 </style>

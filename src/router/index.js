@@ -47,6 +47,12 @@ const routes = [
   props: true,
   component: () => import('../components/SingleItem.vue')
 
+},{
+  path: '/checkout/:id',
+  name: 'checkout',
+  props: true,
+  component: () => import('../components/CheckOut.vue')
+
 },
 ]
 

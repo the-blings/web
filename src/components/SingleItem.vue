@@ -1,22 +1,32 @@
 <template>
-<v-container>
+<v-container class="main">
+    <v-flex xs12 class="text-center">
+        <v-layout row>
     <v-container v-if="img">
         <v-layout row>
-        <expandable-image height="338" :src="img"></expandable-image>
+        <v-img height="548" :src="img"></v-img>
+        <!--  <expandable-image height="438" :src="img"></expandable-image>
+        -->
         </v-layout>
     </v-container>
     
     <v-container v-if="img0">
         <v-layout row>
-        <expandable-image height="338" :src="img0"></expandable-image>
-        </v-layout>
+             <v-img height="548" :src="img0"></v-img>
+       
+       <!--  <expandable-image height="338" :src="img0"></expandable-image>
+        --> </v-layout>
     </v-container>
     
     <v-container v-if="img1">
         <v-layout row>
-        <expandable-image height="338" :src="img1"></expandable-image>
-        </v-layout>
+             <v-img height="548" :src="img1"></v-img>
+       
+       <!--  <expandable-image height="338" :src="img1"></expandable-image>
+        --> </v-layout>
     </v-container>
+        </v-layout>
+    </v-flex>
 
     <v-container>
             <v-card>
@@ -26,38 +36,23 @@
                     <v-card-text>
                         <div class="rows">
                         <v-layout row class="mb-3">
-                            {{item.price}}
+                         Rs. {{item.price}}
                         </v-layout>
                         
                         <v-layout row class="mb-3">
                             {{item.description}}
                         </v-layout>
                         
-                        <v-layout row class="mb-3">
-                                    <v-select
-                                    :items="numbers"
-                                    label="Number of items"
-                                    solo
-                                    v-model="number"
-                                    ></v-select>
-                        </v-layout>
                         
-                        <v-layout row class="mb-3">
-                            <v-textarea
-                          v-model="description"
-                          color="teal"
-                         >
-                       <template v-slot:label>
-                         <div>
-                          address <small>(delivery)</small>
-                         </div>
-                       </template>
-                        </v-textarea>
-                        </v-layout>
+                        
+                        
                         </div>
                     </v-card-text>
                     <v-card-actions>
-                        <v-btn color="green">buy</v-btn>
+                        <v-btn
+                         color="green"
+                         :to="'/checkout/' + item.id "
+                         >buy</v-btn>
                     </v-card-actions>
             </v-card>
     </v-container>
@@ -72,7 +67,8 @@ export default {
             wholeResponse: [],
             img: '',
             img0: '',
-            img1: ''
+            img1: '',
+            numbers : ['1','2','3','4','5','6']
 
         
     }),
@@ -117,5 +113,9 @@ export default {
 .rows {
     font-size: 19px;
     font-weight: bold
+}
+
+.main {
+    min-height: 1396px
 }
 </style>
