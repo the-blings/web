@@ -1,30 +1,26 @@
 <template>
-    <v-container v-if="item.item">
-        <v-layout>
-            <v-flex xs12 sm6 offset-sm3 class="text-center my-8">
-                <v-card>
+    <v-container>
+        <v-layout row>
+            <v-flex xs12 class="text-center blue--text">
+              <h1>  {{ items.item }}  </h1>
+            </v-flex>
+        </v-layout>
 
-                    <v-layout class="text-center blue--text">
-                        <v-flex xs12 class="text-center">
-                      <!--  <h1> {{this.item}}  </h1>
-                        --> 
-                         <h1> {{item.item}}  </h1>
-                       </v-flex>
-                    </v-layout>
+        <v-layout row class="ml-1 mb-3">
+            <h3>Rs. {{items.price}}</h3>
+        </v-layout>
 
-                    <v-layout row class="mb-3 ml-1 mr-1">
+         <v-layout row class="mb-3 ml-1 mr-1">
                                     <v-select
                                     :items="numbers"
                                     label="Number of items"
                                     solo
-                                    v-model="number1"
+                                    v-model="number"
                                     id="number"
                                     name = "number"
                                     ></v-select>
                     </v-layout>
-
-
-                        <v-layout row class="mb-3 ml-1 mr-1">
+          <v-layout row class="mb-3 ml-1 mr-1">
                             <v-text-field
                         
                             v-model="name"
@@ -35,7 +31,7 @@
 
                         </v-layout>
 
-                        <v-col cols="12">
+                         <v-col cols="12">
                          <v-textarea
                          name="delivery"
                          id = "delivery"
@@ -50,7 +46,7 @@
                         </v-textarea>
                         </v-col>
 
-                         <v-layout row class="mb-3 ml-1 mr-1">
+                    <v-layout row class="mb-3 ml-1 mr-1">
                               <v-select
                                     :items="towns"
                                     label="City"
@@ -59,7 +55,19 @@
                                     ></v-select>
                          </v-layout>
 
-                        <v-layout row class="mb-3 ml-1 mr-1">
+                           <v-layout row class="mb-3 ml-1 mr-1">
+                            <v-text-field
+                        
+                            v-model="phone"
+                            id="phone"
+                            name="phone"
+                            label="Phone">
+                            </v-text-field>
+
+                        </v-layout>
+
+
+                         <v-layout row class="mb-3 ml-1 mr-1">
                                     <v-select
                                     name = "purpose"
                                     id="purpose"
@@ -70,85 +78,76 @@
                                     ></v-select>
                         </v-layout>
 
-                        <v-layout row class="mb-3 ml-1 mr-1 price">
-                          amount : {{this.price * this.number}}
-                        </v-layout>
-                        <v-btn @click="checkout" color="#ebce59" class="mb-1">
-<!-- 
-                        <v-btn rounded :to="'/itemview/' + item.id + '/'">  
-                    -->             Checkout
-                                </v-btn>
 
-                </v-card>
-            </v-flex>
+
+
+        <v-layout row class="ml-1 mb-3">
+            <h3>amount : {{items.price * number}}</h3>
         </v-layout>
+
+        <v-btn @click="checkout(items.item)">checkout</v-btn> 
+                
+
     </v-container>
 </template>
 
-
 <script>
 export default {
-    data: () => ({
-        purposeitems : ['My use', 'To gift someone'],
-        towns : ['Colombo', 'Kaduwela',	'Maharagama','Kesbewa','Dehiwala-Mount Lavinia','Moratuwa','Negombo','Sri Jayawardenepura','Kalmunai','Kandy'],
-        purpose: '',
-        delivery: '',
+
+    data : () => ({
+        numbers : ['1','2','3','4','5','6'],
+        number : '',
         name: '',
-        city: '',
+        delivery: '',
+        towns : ['Colombo', 'Kaduwela',	'Maharagama','Kesbewa','Dehiwala-Mount Lavinia','Moratuwa','Negombo','Sri Jayawardenepura','Kalmunai','Kandy'],
+        price: '',
+        purposeitems : ['My use', 'To gift someone'],
+        purpose: '',
         phone: '',
         item: '',
-        itemcode: '',
-        number1: 0,
-        numbers: ['1','2','3','4','5','6','7'],
-        id: '',
-        amount: this.number1 * this.price,
-        
-        wholeResponse: {}
+        amount: ''
+    /*     amount : this.price * this.number
+     */ /*    amount: this.price * this.number
 
+ */
+      
 
-        
-    }), 
-    
+    }),
+
 
     props: ['id'],
-    computed: {
-        item() {
-            return this.$store.getters.stocksfind(this.id)
-            
-        },
+
+      computed : {
+        items () {
+        return this.$store.getters.stocksfind(this.id)
+      /*   this.price = this.$store.getters.stocksfind(this.id).price
+       */  }
     },
 
-  /*   mounted () {
-        this.wholeResponse = this.$store.getters.stocksfind(this.id)
-        console.log(this.wholeResponse)
-       /*  this.item = this.wholeResponse[0].item
-        this.id = this.wholeResponse[0].id
-        this.price = this.wholeResponse[0].price
-    
-    }, */
+        methods : {
+        checkout (item) {
+          //  this.amount = amount
+            this.item = item
 
-    methods : {
-        checkout () {
             this.$store.dispatch('checkout',{item:this.item, 
                                              name:this.name, 
                                              city:this.city, 
-                                             number:this.number1, 
+                                             number:this.number, 
                                              address:this.delivery, 
                                              phone:this.phone, 
                                              packaging:this.purpose,
-                                             amount:this.amount})
+                                             //amount:this.amount
+                                             })
         }
     },
 
-  
+      mounted () {
+        
+        this.price = this.$store.getters.stocksfind(this.id).price
+            
+        
+    }
+
 }
 </script>
 
-
-<style scoped>
-.price {
-    font-size: 19px;
-    font-weight: bold;
-    
-}
-</style>

@@ -7,7 +7,8 @@ Vue.use(Vuex)
 export default new Vuex.Store({
   state: {
 
-    stocks: []
+    stocks: [],
+    orders: [],
 
   },
   mutations: {
@@ -18,6 +19,10 @@ export default new Vuex.Store({
 
     stockset (state, pay) {
       state.stocks = pay
+    },
+
+    createneworder (state, pay) {
+      state.orders.push(pay)
     }
 
 
@@ -25,15 +30,16 @@ export default new Vuex.Store({
   },
   actions: {
 
-    createneworder ({ commit }, pay) {
+    checkout ({ commit }, pay) {
       const order = {
         item: pay.item,
-        buyer: pay.buyer,
-        quantity: pay.quantity,
-        price: pay.price,
-        amount: pay.amount,
+        name: pay.name,
+        number: pay.number,
+        city: pay.city,
+     //   amount: pay.amount,
+        phone: pay.phone,
         address: pay.address,
-        city: pay.city
+        packaging: pay.packaging
       }
 
       firebase.database().ref('orders').push(order)

@@ -54,6 +54,13 @@ const routes = [
   component: () => import('../components/CheckOut.vue')
 
 },
+{
+  path: '/checkout1/:id',
+  name: 'checkout1',
+  props: true,
+  component: () => import('../components/CheckOut1.vue')
+
+},
 ]
 
 const router = new VueRouter({

@@ -3,7 +3,7 @@
     <v-flex xs12 class="text-center">
         <v-layout row>
     <v-container v-if="img">
-        <v-layout row>
+        <v-layout row class="ml-1 mr-1">
         <v-img height="548" :src="img"></v-img>
         <!--  <expandable-image height="438" :src="img"></expandable-image>
         -->
@@ -11,7 +11,7 @@
     </v-container>
     
     <v-container v-if="img0">
-        <v-layout row>
+        <v-layout row class="ml-1 mr-1">
              <v-img height="548" :src="img0"></v-img>
        
        <!--  <expandable-image height="338" :src="img0"></expandable-image>
@@ -19,7 +19,7 @@
     </v-container>
     
     <v-container v-if="img1">
-        <v-layout row>
+        <v-layout row class="ml-1 mr-1">
              <v-img height="548" :src="img1"></v-img>
        
        <!--  <expandable-image height="338" :src="img1"></expandable-image>
@@ -45,17 +45,22 @@
                         
                         
                         
+                      <!--    :to="'/checkout/' + item.id" -->
                         
                         </div>
                     </v-card-text>
                     <v-card-actions>
                         <v-btn
                          color="green"
-                         :to="'/checkout/' + this.id "
+                         @click="clickk"
+                         :to="'/checkout1/' + item.id"
                          >buy</v-btn>
                     </v-card-actions>
             </v-card>
     </v-container>
+
+  
+
 </v-container>
 </template>
 
@@ -68,7 +73,12 @@ export default {
             img: '',
             img0: '',
             img1: '',
-            numbers : ['1','2','3','4','5','6']
+            numbers : ['1','2','3','4','5','6'],
+            clicked: false,
+
+            currenturl: ''
+
+            
 
         
     }),
@@ -101,7 +111,15 @@ export default {
             this.img = this.wholeResponse.img
             this.img0 = this.wholeResponse.img0
             this.img1 = this.wholeResponse.img1
+
+            this.currenturl = window.location.pathname;
         
+    },
+
+    methods : {
+        clickk() {
+            this.clicked = true
+        }
     }
 
 }
