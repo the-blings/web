@@ -1,14 +1,16 @@
 <template>
     <v-container>
         <v-layout>
-            <v-flex xs12>
+            <v-flex xs12 sm6 offset-sm3 class="text-center my-8">
                 <v-card>
 
-                    <v-layout>
-                        {{item.item}}
+                    <v-layout class="text-center blue--text">
+                        <v-flex xs12 class="text-center">
+                       <h1> {{this.item}}  </h1>
+                        </v-flex>
                     </v-layout>
 
-                    <v-layout row class="mb-3">
+                    <v-layout row class="mb-3 ml-1 mr-1">
                                     <v-select
                                     :items="numbers"
                                     label="Number of items"
@@ -18,7 +20,7 @@
                     </v-layout>
 
 
-                        <v-layout row>
+                        <v-layout row class="mb-3 ml-1 mr-1">
                             <v-text-field
                             v-model="name"
                             label="Name">
@@ -39,15 +41,15 @@
                         </v-textarea>
                         </v-col>
 
-                        <v-layout row class="mb-3">
+                        <v-layout row class="mb-3 ml-1 mr-1">
                                     <v-select
-                                    :items="purpose"
+                                    :items="purposeitems"
                                     label="I buy this for"
                                     solo
                                     v-model="purpose"
                                     ></v-select>
                         </v-layout>
-                        <v-btn>
+                        <v-btn @click="checkout" color="#ebce59" class="mb-1">
 <!-- 
                         <v-btn rounded :to="'/itemview/' + item.id + '/'">  
                     -->             Checkout
@@ -72,6 +74,7 @@ export default {
         item: '',
         itemcode: '',
         number: '',
+        numbers: ['1','2','3','4','5','6','7'],
         id: '',
         
         wholeResponse: []
@@ -89,7 +92,8 @@ export default {
     },
 
     mounted () {
-        this.wholeResponse = this.$store.getters.stocksfind(this.id)
+        this.wholeResponse[0] = this.$store.getters.stocksfind(this.id)
+        console.log(this.wholeResponse[0])
         this.item = this.wholeResponse[0].item
         this.id = this.wholeResponse[0].id
     },

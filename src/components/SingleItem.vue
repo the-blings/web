@@ -51,7 +51,7 @@
                     <v-card-actions>
                         <v-btn
                          color="green"
-                         :to="'/checkout/' + item.id "
+                         :to="'/checkout/' + this.id "
                          >buy</v-btn>
                     </v-card-actions>
             </v-card>
