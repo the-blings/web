@@ -1,8 +1,9 @@
 <template>
     <v-container>
         <v-layout row>
-            <v-flex xs12 class="display-3 text-center my-10">
-                CATEGORIES
+<!--             <v-flex xs12 class="display-3 text-center my-10"> -->
+    <v-flex xs12 class="main1 text-center">
+                <h1>CATEGORIES</h1>
 
             </v-flex>
         </v-layout>
@@ -69,14 +70,23 @@
 
 
 <style>
+
+@import url('https://fonts.googleapis.com/css?family=Permanent+Marker&display=swap');
+
+.main1 {
+    font-size: 36px;
+    font-family: 'Permanent Marker';
+}
 .v-card--reveal {
   align-items: center;
   bottom: 0;
   justify-content: center;
   opacity: .5;
   position: absolute;
-  width: 100%;
+  width: 100%;  
+font-family: 'Permanent Marker';
 }
+
 </style>
 
 

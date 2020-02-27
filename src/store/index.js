@@ -38,7 +38,7 @@ export default new Vuex.Store({
         city: pay.city,
      //   amount: pay.amount,
         phone: pay.phone,
-        address: pay.address,
+        message: pay.address,
         packaging: pay.packaging
       }
 

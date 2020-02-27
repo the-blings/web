@@ -2,8 +2,8 @@
 <div class="main"> 
     <v-container >
         <v-layout row>
-            <v-flex xs12 class="text-center display-3 font-weight-thin mb-3">
-                Items
+            <v-flex xs12 class="text-center">
+                <h1>Items</h1>
             </v-flex>
         </v-layout>
 <!--
@@ -138,11 +138,26 @@ export default {
 
 
 <style>
+@import url('https://fonts.googleapis.com/css?family=Permanent+Marker&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Yeon+Sung&display=swap');
+
+
 
 .main {
     /* 
      background: linear-gradient(to right, #fbd3e9, #bb377d); */
      background: linear-gradient(to right, #12c2e9, #c471ed, #f64f59); 
+     font-family: 'Permanent Marker';
+}
+
+
+
+
+.main h1 {
+
+    font-family: 'Permanent Marker';
+    font-size: 36px;
+
 }
 
 

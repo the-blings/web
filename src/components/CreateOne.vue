@@ -230,9 +230,11 @@ export default {
 </script>
 
 <style scoped>
+@import url('https://fonts.googleapis.com/css?family=Lacquer&display=swap');
 .form {
     position: relative;
-    top: 169px
+    top: 169px;
+    font-family: 'Lacquer', ;
 }
 
 .main {

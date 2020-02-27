@@ -1,5 +1,6 @@
 <template>
     <v-container>
+      <div class="form">
         <v-layout row>
             <v-flex xs12 class="text-center blue--text">
               <h1>  {{ items.item }}  </h1>
@@ -31,7 +32,7 @@
 
                         </v-layout>
 
-                         <v-col cols="12">
+                       <!--   <v-col cols="12">
                          <v-textarea
                          name="delivery"
                          id = "delivery"
@@ -53,7 +54,23 @@
                                     solo
                                     v-model="city"
                                     ></v-select>
-                         </v-layout>
+                         </v-layout> -->
+
+                         <v-col cols="12">
+                         <v-textarea
+                         name="delivery"
+                         id = "delivery"
+                          v-model="delivery"
+                          color="teal"
+                         >
+                       <template v-slot:label>
+                         <div>
+                          Message <small>(any)</small>
+                         </div>
+                       </template>
+                        </v-textarea>
+                        </v-col>
+
 
                            <v-layout row class="mb-3 ml-1 mr-1">
                             <v-text-field
@@ -87,7 +104,7 @@
 
         <v-btn @click="checkout(items.item)">checkout</v-btn> 
                 
-
+      </div>
     </v-container>
 </template>
 
@@ -151,3 +168,14 @@ export default {
 }
 </script>
 
+<style>
+
+@import url('https://fonts.googleapis.com/css?family=Permanent+Marker&display=swap');
+
+.form {
+    position: relative;
+    margin-bottom: 8px;
+    font-family: 'Permanent Marker';
+}
+
+</style>

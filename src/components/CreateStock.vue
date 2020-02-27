@@ -11,7 +11,7 @@
                 <v-container>  
                     
                     <v-layout row>
-                        <v-flex xs12 class="text-center display-1 font-weight-black my-5">Post Item</v-flex>
+                        <v-flex xs12 class="text-center display-1 font-weight-black my-5 topic">Post Item</v-flex>
                     </v-layout>
 
 
@@ -426,13 +426,22 @@ export default {
 </script>
 
 <style scoped>
+@import url('https://fonts.googleapis.com/css?family=Permanent+Marker&display=swap');
+
 .form {
     position: relative;
-    top: 169px
+    top: 169px;
+    font-family: 'Permanent Marker';
+}
+.topic {
+    
+    font-family: 'Permanent Marker';
+}
+.main {
+    min-height: 1696px;
+    
+    font-family: 'Permanent Marker';
 }
 
-.main {
-    min-height: 1696px
-}
 
 </style>

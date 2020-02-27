@@ -33,3 +33,13 @@ export default {
   }),
 };
 </script>
+
+<style scoped>
+
+  @import url('https://fonts.googleapis.com/css?family=Permanent+Marker&display=swap');
+.App {
+  
+    font-family: 'Permanent Marker';
+}
+</style>
+
