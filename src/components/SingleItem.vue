@@ -1,5 +1,5 @@
 <template>
-<v-container class="itemform">
+<v-container class="itemform ">
     <v-flex xs12 class="text-center">
         <v-layout row>
     <v-container v-if="img">

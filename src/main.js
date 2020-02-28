@@ -45,6 +45,7 @@ new Vue({
 
     
     this.$store.dispatch('stocksfetch')
+    this.$store.dispatch('fetchOrders')
   }
 
 }).$mount('#app')

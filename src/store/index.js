@@ -47,7 +47,8 @@ export default new Vuex.Store({
               phone: obj[key].phone,
               packaging: obj[key].packaging,
               address: obj[key].address,
-              message: obj[key].message
+              message: obj[key].message,
+              name: obj[key].name
 
           })
       }
@@ -149,6 +150,11 @@ export default new Vuex.Store({
   },
 
   getters: {
+
+    
+    orders (state) {
+      return state.orders
+    },
 
     stocks (state) {
       return state.stocks
