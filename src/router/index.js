@@ -61,6 +61,11 @@ const routes = [
   component: () => import('../components/CheckOut1.vue')
 
 },
+{
+  path: '/showorders',
+  name: 'showorders',
+  component: () => import('../components/ShowOrders.vue')
+},
 ]
 
 const router = new VueRouter({

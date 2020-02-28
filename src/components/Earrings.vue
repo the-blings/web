@@ -7,7 +7,8 @@
         </v-layout>
 
         <v-layout row wrap>
-            <v-flex xs12 sm4 class="text-center ">
+            <v-flex xs12 sm4 class="text-center main1">
+              <h3>  BANGLES </h3>
                 <v-hover v-slot:default="{ hover }">
                 <v-card elevation="19" to="/itemview">
                 <v-img height="498" src="https://i.pinimg.com/736x/44/23/72/442372d66b37e9d909b6dc092e090aeb.jpg">
@@ -26,7 +27,8 @@
             </v-flex>
 
             <v-spacer></v-spacer>
-            <v-flex xs12 sm4 class="text-center ">
+            <v-flex xs12 sm4 class="text-center main1">
+              <h3>STUDS</h3>
                 <v-hover v-slot:default="{ hover }">
                 <v-card elevation="19" to="/itemview">
                 <v-img height="498" src="https://i.pinimg.com/736x/44/23/72/442372d66b37e9d909b6dc092e090aeb.jpg">
@@ -57,6 +59,12 @@
 @import url('https://fonts.googleapis.com/css?family=Permanent+Marker&display=swap');
 
 .main1 {
+    margin-bottom: 8px;
+    font-family: 'Permanent Marker';
+}
+
+
+.main1 h3 {
     margin-bottom: 8px;
     font-family: 'Permanent Marker';
 }

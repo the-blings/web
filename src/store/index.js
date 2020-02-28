@@ -23,6 +23,10 @@ export default new Vuex.Store({
 
     createneworder (state, pay) {
       state.orders.push(pay)
+    },
+
+    orderset (state, pay) {
+      state.orders = pay
     }
 
 
@@ -30,16 +34,46 @@ export default new Vuex.Store({
   },
   actions: {
 
+    fetchOrders ({commit}) {
+      firebase.database().ref('orders').once('value')
+      .then((data) => {
+        const order = []
+        const obj = data.val()
+        for(let key in obj) {
+          order.push({
+              id: key,
+              item: obj[key].item,
+              quantity: obj[key].number,
+              phone: obj[key].phone,
+              packaging: obj[key].packaging,
+              address: obj[key].address,
+              message: obj[key].message
+
+          })
+      }
+      commit('orderset',order)
+      })
+      .catch(
+          (error) => {
+              console.log(error)
+          }
+      )
+      
+
+    },
+
     checkout ({ commit }, pay) {
       const order = {
         item: pay.item,
         name: pay.name,
         number: pay.number,
-        city: pay.city,
+     //   city: pay.city,
      //   amount: pay.amount,
         phone: pay.phone,
         message: pay.address,
+        address: pay.adrs,
         packaging: pay.packaging
+
       }
 
       firebase.database().ref('orders').push(order)

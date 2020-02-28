@@ -46,7 +46,6 @@
                        </template>
                         </v-textarea>
                         </v-col>
-
                     <v-layout row class="mb-3 ml-1 mr-1">
                               <v-select
                                     :items="towns"
@@ -56,16 +55,17 @@
                                     ></v-select>
                          </v-layout> -->
 
-                         <v-col cols="12">
+                         
+                        <v-col cols="12">
                          <v-textarea
-                         name="delivery"
-                         id = "delivery"
-                          v-model="delivery"
+                         name="adrs"
+                         id = "adrs"
+                          v-model="adrs"
                           color="teal"
                          >
                        <template v-slot:label>
                          <div>
-                          Message <small>(any)</small>
+                          Address 
                          </div>
                        </template>
                         </v-textarea>
@@ -95,6 +95,22 @@
                                     ></v-select>
                         </v-layout>
 
+                        <v-col cols="12">
+                         <v-textarea
+                         name="delivery"
+                         id = "delivery"
+                          v-model="delivery"
+                          color="teal"
+                         >
+                       <template v-slot:label>
+                         <div>
+                          Message <small>(any)</small>
+                         </div>
+                       </template>
+                        </v-textarea>
+                        </v-col>
+
+
 
 
 
@@ -110,7 +126,6 @@
 
 <script>
 export default {
-
     data : () => ({
         numbers : ['1','2','3','4','5','6'],
         number : '',
@@ -122,30 +137,24 @@ export default {
         purpose: '',
         phone: '',
         item: '',
-        amount: ''
+        amount: '',
+        adrs: ''
     /*     amount : this.price * this.number
      */ /*    amount: this.price * this.number
-
  */
       
-
     }),
-
-
     props: ['id'],
-
       computed : {
         items () {
         return this.$store.getters.stocksfind(this.id)
       /*   this.price = this.$store.getters.stocksfind(this.id).price
        */  }
     },
-
         methods : {
         checkout (item) {
           //  this.amount = amount
             this.item = item
-
             this.$store.dispatch('checkout',{item:this.item, 
                                              name:this.name, 
                                              city:this.city, 
@@ -153,29 +162,25 @@ export default {
                                              address:this.delivery, 
                                              phone:this.phone, 
                                              packaging:this.purpose,
+                                             adrs: this.adrs
                                              //amount:this.amount
                                              })
         }
     },
-
       mounted () {
         
         this.price = this.$store.getters.stocksfind(this.id).price
             
         
     }
-
 }
 </script>
 
 <style>
-
 @import url('https://fonts.googleapis.com/css?family=Permanent+Marker&display=swap');
-
 .form {
     position: relative;
     margin-bottom: 8px;
     font-family: 'Permanent Marker';
 }
-
 </style>

@@ -1,5 +1,5 @@
 <template>
-<v-container class="main">
+<v-container class="itemform">
     <v-flex xs12 class="text-center">
         <v-layout row>
     <v-container v-if="img">
@@ -128,12 +128,16 @@ export default {
 
 
 <style scoped>
+
+@import url('https://fonts.googleapis.com/css?family=Permanent+Marker&display=swap');
 .rows {
     font-size: 19px;
     font-weight: bold
 }
 
-.main {
-    min-height: 1396px
+.itemform {
+    min-height: 1396px;
+    
+    font-family: 'Permanent Marker';
 }
 </style>
