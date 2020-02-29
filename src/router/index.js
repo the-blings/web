@@ -66,6 +66,11 @@ const routes = [
   name: 'showorders',
   component: () => import('../components/ShowOrders.vue')
 },
+{
+  path: '/dangles',
+  name: 'dangles',
+  component: () => import('../components/Dangles.vue')
+},
 ]
 
 const router = new VueRouter({

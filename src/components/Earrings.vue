@@ -8,9 +8,9 @@
 
         <v-layout row wrap>
             <v-flex xs12 sm4 class="text-center main1">
-              <h3>  BANGLES </h3>
+              <h3>  DANGLES </h3>
                 <v-hover v-slot:default="{ hover }">
-                <v-card elevation="19" to="/itemview">
+                <v-card elevation="19" to="/dangles">
                 <v-img height="498" src="https://i.pinimg.com/736x/44/23/72/442372d66b37e9d909b6dc092e090aeb.jpg">
                   <v-expand-transition>
                 <div
@@ -18,7 +18,7 @@
                  class="d-flex transition-fast-in-fast-out orange darken-2 v-card--reveal display-3 white--text"
                  style="height: 100%;"
                  >
-                BANGLES
+                DANGLES
                </div>
                  </v-expand-transition>
                 </v-img>
@@ -30,7 +30,7 @@
             <v-flex xs12 sm4 class="text-center main1">
               <h3>STUDS</h3>
                 <v-hover v-slot:default="{ hover }">
-                <v-card elevation="19" to="/itemview">
+                <v-card elevation="19" to="/studs">
                 <v-img height="498" src="https://i.pinimg.com/736x/44/23/72/442372d66b37e9d909b6dc092e090aeb.jpg">
                   <v-expand-transition>
                 <div

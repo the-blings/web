@@ -29,6 +29,19 @@
                                 </v-text-field>
                             </v-flex>
                         </v-layout>
+
+                        <v-layout row>
+                            <v-flex xs12 offeset-sm3>
+                                <v-col class="d-flex" cols="12" sm="6">
+                                    <v-select
+                                    :items="types"
+                                    label="Item type"
+                                    solo
+                                    v-model="itemtype"
+                                    ></v-select>
+                                </v-col>
+                            </v-flex>
+                        </v-layout>
                         
                      <!--     <v-layout row>
                             <v-flex xs12 sm6 offset-sm3>
@@ -303,6 +316,7 @@ export default {
         numbers: ['1', '2', '3', '4', '5', '6', '7'],
         items: ['item_1', 'item_2', 'item_3', 'item_4', 'item_5', 'item_6', 'item_7'],
         items1: ['Colombo', 'Kaduwela',	'Maharagama','Kesbewa','Dehiwala-Mount Lavinia','Moratuwa','Negombo','Sri Jayawardenepura','Kalmunai','Kandy'],
+        types: ['Dangle','Stud','Necklace','Solid','Pattern'],
 
         sign: {},
 
@@ -323,6 +337,7 @@ export default {
       imgurl: '',
       imgurl0: '',
       imgurl1: '',
+      itemtype: ''
 
     }),
 
