@@ -71,6 +71,31 @@ const routes = [
   name: 'dangles',
   component: () => import('../components/Dangles.vue')
 },
+{
+  path: '/necklaces',
+  name: 'necklaces',
+  component: () => import('../components/Ckles.vue')
+},
+{
+  path: '/pattern',
+  name: 'pattern',
+  component: () => import('../components/Pattern.vue')
+},
+{
+  path: '/solid',
+  name: 'solid',
+  component: () => import('../components/Solid.vue')
+},
+{
+  path: '/brcelets',
+  name: 'bracelets',
+  component: () => import('../components/Clets.vue')
+},
+{
+  path: '/studs',
+  name: 'studs',
+  component: () => import('../components/Stud.vue')
+},
 ]
 
 const router = new VueRouter({

@@ -100,7 +100,8 @@ export default new Vuex.Store({
         description: pay.description,
         img: pay.img,
         img0: pay.img0,
-        img1: pay.img1
+        img1: pay.img1,
+        itemtype: pay.itemtype
       }
 
       firebase.database().ref('stock').push(item)

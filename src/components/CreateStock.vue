@@ -352,7 +352,14 @@ export default {
                 console.log(this.city);
                 console.log(this.fullamount);
  */
-                this.$store.dispatch('createnewstock', {item:this.item, quantity:this.number, price:this.price, description:this.description, img:this.imgurl, img0:this.imgurl0, img1:this.imgurl1})
+                this.$store.dispatch('createnewstock', {item:this.item, 
+                                                        quantity:this.number, 
+                                                        price:this.price, 
+                                                        description:this.description, 
+                                                        img:this.imgurl, 
+                                                        img0:this.imgurl0, 
+                                                        img1:this.imgurl1,
+                                                        itemtype:this.itemtype})
                 this.$router.push('/itemview')
             },
 

@@ -3,7 +3,7 @@
     <v-container >
         <v-layout row>
             <v-flex xs12 class="text-center">
-                <h1>Earrings - Dangles</h1>
+                <h1>Necklace</h1>
             </v-flex>
         </v-layout>
 
@@ -63,7 +63,7 @@ export default {
         this.wholeResponse = this.$store.getters.stocks
         var i=0;
         for (i = 0; i < this.wholeResponse.length; i++) {
-            if(this.wholeResponse[i].itemtype == 'Dangle') {
+            if(this.wholeResponse[i].itemtype == 'Necklace') {
                 this.wholeResponse1.push(this.wholeResponse[i])
             } /* else {
                 return
