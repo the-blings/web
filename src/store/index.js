@@ -75,7 +75,8 @@ export default new Vuex.Store({
         phone: pay.phone,
         message: pay.address,
         address: pay.adrs,
-        packaging: pay.packaging
+        packaging: pay.packaging,
+        totalprice: pay.amount
 
       }
 

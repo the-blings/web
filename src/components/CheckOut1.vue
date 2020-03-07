@@ -118,7 +118,7 @@
             <h3>amount : {{items.price * number}}</h3>
         </v-layout>
 
-        <v-btn @click="checkout(items.item)">checkout</v-btn> 
+        <v-btn @click="checkout(items.item, items.price * number)">checkout</v-btn> 
                 
       </div>
     </v-container>
@@ -152,7 +152,7 @@ export default {
        */  }
     },
         methods : {
-        checkout (item) {
+        checkout (item, total) {
           //  this.amount = amount
             this.item = item
             this.$store.dispatch('checkout',{item:this.item, 
@@ -162,8 +162,10 @@ export default {
                                              address:this.delivery, 
                                              phone:this.phone, 
                                              packaging:this.purpose,
-                                             adrs: this.adrs
-                                             //amount:this.amount
+                                             adrs: this.adrs,
+
+                                             amount:total
+                                             
                                              })
             this.$router.push('/checkoutgreet')
         }
