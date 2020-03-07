@@ -9,6 +9,7 @@ export default new Vuex.Store({
 
     stocks: [],
     orders: [],
+    cart: []
 
   },
   mutations: {
@@ -23,6 +24,7 @@ export default new Vuex.Store({
 
     createneworder (state, pay) {
       state.orders.push(pay)
+      state.cart.push(pay)
     },
 
     orderset (state, pay) {
@@ -167,6 +169,10 @@ export default new Vuex.Store({
           return stock.id == stockid
         })
       }
+    },
+
+    cart (state) {
+      return state.cart
     }
   }
 })

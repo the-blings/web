@@ -101,6 +101,11 @@ const routes = [
   name: 'checkoutgreet',
   component: () => import('../components/CheckoutGreet.vue')
 },
+{
+  path: '/cart',
+  name: 'cart',
+  component: () => import('../components/ShoppingCart/Cart.vue')
+},
 ]
 
 const router = new VueRouter({
