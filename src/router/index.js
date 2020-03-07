@@ -96,6 +96,11 @@ const routes = [
   name: 'studs',
   component: () => import('../components/Stud.vue')
 },
+{
+  path: '/checkoutgreet',
+  name: 'checkoutgreet',
+  component: () => import('../components/CheckoutGreet.vue')
+},
 ]
 
 const router = new VueRouter({

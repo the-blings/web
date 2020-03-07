@@ -165,6 +165,7 @@ export default {
                                              adrs: this.adrs
                                              //amount:this.amount
                                              })
+            this.$router.push('/checkoutgreet')
         }
     },
       mounted () {
